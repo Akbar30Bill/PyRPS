@@ -86,5 +86,7 @@ def play():
         print ( "you lose!" )
     else:
         print ( "DRAW" )
-
-play()
+try:
+    play()
+except ValueError:
+    print("you should have enter a number BLYAT")
