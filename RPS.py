@@ -34,7 +34,7 @@ def play():
     i = int(i)
     call("clear")
     while i > 0:
-        print ( "ROCK / PAPER / SCISSORS (r,p,s):")
+        print ( "ROCK / PAPER / SCISSORS (r,p,s , or any other key to skip round):")
         in_key1 = getch.getch()
         in_key2 = rand(1,3)
         if in_key1 == 'r':
