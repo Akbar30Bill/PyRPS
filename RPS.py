@@ -33,9 +33,11 @@ def play():
     i = input("count of rounds to play?")
     i = int(i)
     call("clear")
+    count_of_rounds = i
     while i > 0:
-        print ( "ROCK / PAPER / SCISSORS (r,p,s , or any other key to skip round):")
-        in_key1 = getch.getch()
+        print ( "\nROCK / PAPER / SCISSORS (r,p,s , or any other key to skip round):" , end = "")
+        in_key1 = getch.getche()
+        print ("\n")
         in_key2 = rand(1,3)
         if in_key1 == 'r':
             if i_am_the_winnner(1 , in_key2) == 1:
@@ -80,10 +82,18 @@ def play():
                 print ("\tRound Draw")
                 continue
         i = i - 1
-    if score1 > score2:
+        if score1 > count_of_rounds / 2:
+            print ( "you won" )
+            return
+        elif score2 > count_of_rounds / 2:
+            print ( "you lose!" )
+            return
+    if score1 > score2 or score1 > count_of_rounds / 2:
         print ( "you won" )
-    elif score1 < score2:
+        return
+    elif score1 < score2 or score2 > count_of_rounds / 2:
         print ( "you lose!" )
+        return
     else:
         print ( "DRAW" )
 try:
