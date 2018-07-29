@@ -84,19 +84,26 @@ def play():
         i = i - 1
         if score1 > count_of_rounds / 2:
             print ( "you won" )
+            quit()
             return
         elif score2 > count_of_rounds / 2:
             print ( "you lose!" )
+            quit()
             return
     if score1 > score2 or score1 > count_of_rounds / 2:
         print ( "you won" )
+        quit()
         return
     elif score1 < score2 or score2 > count_of_rounds / 2:
         print ( "you lose!" )
+        quit()
         return
     else:
         print ( "DRAW" )
-try:
-    play()
-except ValueError:
-    print("you should have enter a number BLYAT")
+        quit()
+
+while True:
+	try:
+		play()
+	except ValueError:
+		input("you should have enter a number BLYAT \nANY_KEY_2_CONTINUE")
